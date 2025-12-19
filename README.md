@@ -7,6 +7,12 @@
 - [x] Save cars to file
 - [x] View saved file
 
+## TODO
+- [ ] Jaunu Delete car funkciju
+- [ ] Gearbox klasi vai enum
+- [ ] Pievienot sorting (Pēc gada\markas\Jaudas)
+- [ ] Pārtaisīt failu saglabāšanu
+
 ## Java faila arhitektūra.
 ```
 12-19-2025RTU

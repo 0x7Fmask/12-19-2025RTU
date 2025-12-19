@@ -3,7 +3,7 @@ public class Car {
     int year, speed;
 
     Engine engine;
-    String gearbox;
+    String gearbox; // būtu labāk ar enum lai nevar citus, kā arī parbaudi 
     int wheelSize;
 
     public Car(String brand, String model, int year, Engine engine, String gearbox, int wheelSize) {

@@ -46,7 +46,7 @@ public class Autoserviss {
         int year = askInt("Gads:");
 
         int hp = askInt("Dzinēja HP/Jauda:");
-        String gearbox = askText("Ātrumkārba (manual/auto):");
+        String gearbox = askText("Ātrumkārba (manual/auto):"); // būtu labāk ar enum lai nevar citus, kā arī parbaudi
         int wheelSize = askInt("Riepu izmērs (col):");
 
         Engine e = new Engine(hp);
@@ -54,7 +54,7 @@ public class Autoserviss {
         cars.add(c);
         JOptionPane.showMessageDialog(null, "Pievienots");
     }
-
+    // Vajadzētu pēc dropdown sarakstu un ne ar index/tekstu
     static void deleteCar() {
         if (cars.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Nav ko dzēst.");
