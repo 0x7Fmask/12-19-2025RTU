@@ -23,8 +23,8 @@ public class Autoserviss {
                     options,
                     options[0]
             );
-             if (choice == 0)       ;
-             else if (choice == 1)  ;
+             if (choice == 0)      askText("AAAAAA") ;
+             else if (choice == 1)  askInt("BBBBBB") ;
              else if (choice == 2)  ;
              else if (choice == 3)  ;
              else if (choice == 4)  ;
@@ -34,5 +34,55 @@ public class Autoserviss {
 
 
        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Util lietas lai parbaudīt ievadītos datus 1. Teksts 2. Cipari
+    static String askText(String msg) {
+        while (true) {
+            String s = JOptionPane.showInputDialog(msg);
+            if (s != null && !s.trim().isEmpty()) return s.trim();
+            JOptionPane.showMessageDialog(null, "Nevar ievadīt tukšu tekstu!");
+        }
+    }
+    static int askInt(String msg) {
+        while (true) {
+            String s = JOptionPane.showInputDialog(msg);
+            try { return Integer.parseInt(s.trim()); }
+            catch (Exception e) { JOptionPane.showMessageDialog(null, "Ievadi numuru"); }
+        }
     }
 }
