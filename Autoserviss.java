@@ -27,8 +27,8 @@ public class Autoserviss {
              if (choice == 0)      addCar() ;
              else if (choice == 1)  listCars();
              else if (choice == 2)  ;
-             else if (choice == 3)  ;
-             else if (choice == 4)  ;
+             else if (choice == 3)  Util.save("cars.txt", cars);
+             else if (choice == 4)  JOptionPane.showMessageDialog(null, Util.read("cars.txt"));
              else break;
             
 

@@ -26,4 +26,7 @@ public class Car {
         return brand + " " + model + " (" + year + "), HP=" + engine.hp +
                 ", ātrumkārba=" + gearbox + ", riepas=" + wheelSize + "\'coll";
     }
+    public String toFileLine() {
+        return brand + ";" + model + ";" + year + ";" + speed + ";" + engine.hp + ";" + gearbox + ";" + wheelSize;
+    }
 }
