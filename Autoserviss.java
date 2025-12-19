@@ -25,7 +25,7 @@ public class Autoserviss {
                     options[0]
             );
              if (choice == 0)      addCar() ;
-             else if (choice == 1)  askInt("BBBBBB") ;
+             else if (choice == 1)  listCars();
              else if (choice == 2)  ;
              else if (choice == 3)  ;
              else if (choice == 4)  ;
@@ -50,10 +50,17 @@ public class Autoserviss {
         cars.add(c);
         JOptionPane.showMessageDialog(null, "Pievienots");
     }
-
-
-
-
+    static void listCars() {
+        if (cars.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Nav mašīna pievienota.");
+            return;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < cars.size(); i++) {
+            sb.append(i).append(") ").append(cars.get(i)).append("\n");
+        }
+        JOptionPane.showMessageDialog(null, sb.toString());
+    }
 
 
 

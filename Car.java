@@ -21,4 +21,9 @@ public class Car {
     public void start() { engine.start(); }
     public void gas() { speed += 10; }
     public void brake() { speed = Math.max(0, speed - 10); }
+
+    public String toString() {
+        return brand + " " + model + " (" + year + "), HP=" + engine.hp +
+                ", ātrumkārba=" + gearbox + ", riepas=" + wheelSize + "\'coll";
+    }
 }
