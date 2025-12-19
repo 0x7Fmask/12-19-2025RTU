@@ -8,7 +8,18 @@ public class Engine {
         this.running = false;
         this.temperature = 20;
     }
-    public void start() { running = true; temperature = 90; }
-    public void stop() { running = false; temperature = 20; }
-    public boolean isRunning() { return running; }
+
+    public void start() {
+        running = true;
+        temperature = 90;
+    }
+
+    public void stop() {
+        running = false;
+        temperature = 20;
+    }
+
+    public boolean isRunning() {
+        return running;
+    }
 }

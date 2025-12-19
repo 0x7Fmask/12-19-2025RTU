@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 public class Autoserviss {
     static ArrayList<Car> cars = new ArrayList<>();
+
     public static void main(String[] args) {
-       while(true){
+        while (true) {
             String[] options = {
                     "Create car",
                     "List cars",
@@ -22,20 +23,23 @@ public class Autoserviss {
                     JOptionPane.INFORMATION_MESSAGE,
                     null,
                     options,
-                    options[0]
-            );
-             if (choice == 0)      addCar() ;
-             else if (choice == 1)  listCars();
-             else if (choice == 2)  ;
-             else if (choice == 3)  Util.save("cars.txt", cars);
-             else if (choice == 4)  JOptionPane.showMessageDialog(null, Util.read("cars.txt"));
-             else break;
-            
+                    options[0]);
+            if (choice == 0)
+                addCar();
+            else if (choice == 1)
+                listCars();
+            else if (choice == 2)
+                ;
+            else if (choice == 3)
+                Util.save("cars.txt", cars);
+            else if (choice == 4)
+                JOptionPane.showMessageDialog(null, Util.read("cars.txt"));
+            else
+                break;
 
-
-
-       }
+        }
     }
+
     static void addCar() {
         String brand = askText("Brand:");
         String model = askText("Model:");
@@ -46,10 +50,11 @@ public class Autoserviss {
         int wheelSize = askInt("Riepu izmērs (col):");
 
         Engine e = new Engine(hp);
-        Car c = new Car(brand, model, year, e, gearbox, wheelSize);   
+        Car c = new Car(brand, model, year, e, gearbox, wheelSize);
         cars.add(c);
         JOptionPane.showMessageDialog(null, "Pievienots");
     }
+
     static void listCars() {
         if (cars.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Nav mašīna pievienota.");
@@ -62,47 +67,24 @@ public class Autoserviss {
         JOptionPane.showMessageDialog(null, sb.toString());
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // Util lietas lai parbaudīt ievadītos datus 1. Teksts 2. Cipari
     static String askText(String msg) {
         while (true) {
             String s = JOptionPane.showInputDialog(msg);
-            if (s != null && !s.trim().isEmpty()) return s.trim();
+            if (s != null && !s.trim().isEmpty())
+                return s.trim();
             JOptionPane.showMessageDialog(null, "Nevar ievadīt tukšu tekstu!");
         }
     }
+
     static int askInt(String msg) {
         while (true) {
             String s = JOptionPane.showInputDialog(msg);
-            try { return Integer.parseInt(s.trim()); }
-            catch (Exception e) { JOptionPane.showMessageDialog(null, "Ievadi numuru"); }
+            try {
+                return Integer.parseInt(s.trim());
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Ievadi numuru");
+            }
         }
     }
 }
