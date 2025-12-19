@@ -29,7 +29,7 @@ public class Autoserviss {
             else if (choice == 1)
                 listCars();
             else if (choice == 2)
-                ;
+                deleteCar();
             else if (choice == 3)
                 Util.save("cars.txt", cars);
             else if (choice == 4)
@@ -53,6 +53,23 @@ public class Autoserviss {
         Car c = new Car(brand, model, year, e, gearbox, wheelSize);
         cars.add(c);
         JOptionPane.showMessageDialog(null, "Pievienots");
+    }
+
+    static void deleteCar() {
+        if (cars.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Nav ko dzēst.");
+            return;
+        }
+
+        int idx = askInt("Ievadi mašīnas indeksu (0.." + (cars.size() - 1) + "):");
+
+        if (idx < 0 || idx >= cars.size()) {
+            JOptionPane.showMessageDialog(null, "Nepareizs indekss!");
+            return;
+        }
+
+        cars.remove(idx);
+        JOptionPane.showMessageDialog(null, "Izdzēsts!");
     }
 
     static void listCars() {
